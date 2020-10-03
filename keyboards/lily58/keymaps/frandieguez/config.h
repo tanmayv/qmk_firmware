@@ -52,4 +52,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #undef OLED_FONT_H
 // #define OLED_FONT_H "keyboards/lily58/keymaps/frandieguez/glcdfont_pulse.c"
-#define OLED_FONT_H "keyboards/lily58/keymaps/frandieguez/glcdfont_cyberpunk2077.c"
+#define OLED_FONT_H "keyboards/lily58/keymaps/frandieguez/logos/glcdfont_cyberpunkbig.c"
