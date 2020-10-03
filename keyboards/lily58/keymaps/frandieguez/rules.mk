@@ -11,7 +11,6 @@ CONSOLE_ENABLE      = no      # Console for debug
 EXTRAKEY_ENABLE     = yes     # Audio control and System control
 MIDI_ENABLE         = no      # MIDI controls
 MOUSEKEY_ENABLE     = no      # Mouse keys
-NKRO_ENABLE         = no      # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 NKRO_ENABLE         = yes     # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 OLED_DRIVER_ENABLE  = yes     # OLED display
 RGBLIGHT_ENABLE     = no      # Enable WS2812 RGB underlight.
