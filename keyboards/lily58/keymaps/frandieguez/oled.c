@@ -23,7 +23,7 @@ const char *read_keylogs(void);
 // If you want to change the display of OLED, you need to change here
 void oled_task_user(void) {
 
-  void render_status(void) {
+  void render_status_main(void) {
     oled_write_ln(read_layer_state(), false);
     oled_write_ln(read_keylog(), false);
     oled_write_ln(read_keylogs(), false);
@@ -32,14 +32,14 @@ void oled_task_user(void) {
     // oled_write_ln(read_mode_icon(keymap_config.swap_lalt_lgui), false);
   }
 
-  void render_logo(void) {
+  void render_status_secondary(void) {
       oled_write(read_logo(), false);
   }
 
   if (is_keyboard_master()) {
-    render_status(); // Renders the current keyboard state (layer, lock, caps, scroll, etc)
+    render_status_main(); // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
-    render_logo();// Renders a static logo
+    render_status_secondary();// Renders a static logo
   }
 }
 #endif // OLED_DRIVER_ENABLE
