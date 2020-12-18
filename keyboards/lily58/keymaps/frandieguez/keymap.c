@@ -4,12 +4,16 @@
   #include "lufa.h"
   #include "split_util.h"
 #endif
+
 #ifdef SSD1306OLED
   #include "ssd1306.h"
 #endif
 
+#ifdef OLED_DRIVER_ENABLE
 #include "oled.c"
-#include "encoder.c"
+#endif
+
+// #include "encoder.c"
 
 extern uint8_t is_master;
 
@@ -75,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | / Space /       \Enter \  |RAISE | DEL  | RALT |
+ *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE | DEL  | RALT |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -118,7 +122,6 @@ void update_tri_layer_RGB(uint8_t layer1, uint8_t layer2, uint8_t layer3) {
     layer_off(layer3);
   }
 }
-
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
