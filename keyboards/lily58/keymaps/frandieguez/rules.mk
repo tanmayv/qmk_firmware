@@ -22,10 +22,16 @@ WPM_ENABLE            = yes     # Enable words per minute counter
 SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
 
 # If you want to change the display of OLED, you need to change here
-SRC +=  ./lib/rgb_state_reader.c \
+SRC += \
         ./lib/layer_state_reader.c \
-        ./lib/logo_reader.c \
-        ./lib/keylogger.c \
+        ./lib/keylogger.c
+		# ./lib/rgb_state_reader.c \
+        # ./lib/logo_reader.c \
         # ./lib/mode_icon_reader.c \
         # ./lib/timelogger.c \
-        # ./lib/host_led_state_reader.c \
+        # ./lib/host_led_state_reader.c
+
+# Reduce hex file by enabling Link Time Optimization
+# https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/#Link_Time_Optimization_and_disabling_core_functionality
+EXTRAFLAGS += -flto
+LTO_ENABLED = yes
